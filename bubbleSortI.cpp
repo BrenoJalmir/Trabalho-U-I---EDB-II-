@@ -39,16 +39,16 @@ void printArray(int *v, int n){
 }
 
 int main(){
-  int n = 5;
-  int* vetor = (int*) malloc(n * sizeof(int));
+  // int n = 5;
+  // int* vetor = (int*) malloc(n * sizeof(int));
 
-  for (int i = 0; i < n; i++){
-    scanf("%d", &vetor[i]);
-  }
+  // for (int i = 0; i < n; i++){
+  //   scanf("%d", &vetor[i]);
+  // }
 
-  printArray(vetor, n);
-  bubbleSortR(vetor, n);
-  printArray(vetor, n);
+  // printArray(vetor, n);
+  // bubbleSortR(vetor, n);
+  // printArray(vetor, n);
 
   return 0;
 }

@@ -17,18 +17,15 @@ void bubbleSort(int *v, int n){
 }
 
 void bubbleSortR(int *v, int n){
-  if (n == 1){
-    return;
-  } else {
-    bubbleSortR(v, n-1);
-    for (int i = n-1; i > 0; i--){
-      if (v[i-1] > v[i]){
-        int temp = v[i-1];
-        v[i-1] = v[i];
-        v[i] = temp;
-      }
+  if (n == 1) return;
+  for (int i = 1; i < n; i++){
+    if (v[i-1] > v[i]){
+      int temp = v[i-1];
+      v[i-1] = v[i];
+      v[i] = temp;
     }
   }
+  bubbleSortR(v, n-1);
 }
 
 void printArray(int *v, int n){

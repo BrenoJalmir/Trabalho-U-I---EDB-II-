@@ -47,5 +47,7 @@ int main(){
   // bubbleSortR(vetor, n);
   // printArray(vetor, n);
 
+  // free(vetor);
+
   return 0;
 }

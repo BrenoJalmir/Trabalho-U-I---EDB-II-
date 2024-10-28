@@ -145,8 +145,8 @@ $$
 Logo, $T(n)$ é O $(n^2)$
 
 ## Teorema Meste
-Como nossa recorrência não é da forma
+Como nossa recorrência não é da forma:
 
-$$T(n) = aT(\dfrac{n}{b} + \Theta(n^K)$$.
+$$T(n) = aT \left( \dfrac{n}{b} \right) + \Theta(n^K)$$
 
 Temos que o Teorema Mestre não é aplicável.

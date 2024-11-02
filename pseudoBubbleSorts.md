@@ -81,6 +81,7 @@ Vamos mostrar por indução que $T(n) \leq cn^2$, $\forall c, n \gt 0$, aplicand
 
 ### Caso base: $n = 1$.
 Temos da definição que $T(1) = 1$. Disso
+
 $$
 \begin{align*}
   T(n) \leq cn^2 & \implies T(1) = 1 \leq  c(1^2) \\
@@ -110,6 +111,7 @@ $$
 $$ T(n) \leq T(n-1) + n $$
 
 Expandindo isso, temos
+
 $$
 \begin{align*}
 i=1 & & & T(n) \leq  T(n-1) + n \\

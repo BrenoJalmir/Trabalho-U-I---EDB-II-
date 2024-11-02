@@ -80,7 +80,7 @@ $$
 Vamos mostrar por indução que $T(n) \leq cn^2$, $\forall c, n \gt 0$, aplicando indução em $n$.
 
 ### Caso base: $n = 1$.
-Temos da definição que $T(1) = 1$
+Temos da definição que $T(1) = 1$. Disso
 $$
 \begin{align*}
   T(n) \leq cn^2 & \implies T(1) = 1 \leq  c(1^2) \\
@@ -92,22 +92,22 @@ $$
 
 Suponha que para um $k$ arbitrário, tal que $1 \lt k \leq n$, vale que
 
-$T(k) <= ck^2$
+$$ T(k) <= ck^2 $$
 
 Observe que $n-1 < n$, $\forall n > 1$.
 
 #### Assim,
-
-$T(n) \leq T(n-1) + n \leq c(n-1)^2 + n \leq cn^2$
-
-$cn^2 - 2cn + c + n \leq cn^2$
-
-$c \leq 2cn - n$
-
-$c \leq n(2c - 1)$
+$$
+\begin{align*}
+  T(n) \leq T(n-1) + n \leq c(n-1)^2 + n &\leq cn^2 \\
+  cn^2 - 2cn + c + n &\leq cn^2 \\
+  c &\leq 2cn - n \\
+  c &\leq n(2c - 1)
+\end{align*}
+$$
 
 ## Método da Iteração
-$T(n) \leq T(n-1) + n$
+$$ T(n) \leq T(n-1) + n $$
 
 Expandindo isso, temos
 $$

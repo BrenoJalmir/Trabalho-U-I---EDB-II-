@@ -16,6 +16,11 @@ Fim enquanto
 Fim bubbleSort
 ```
 
+<p align="center">
+  <!-- ![image info](./images/analise_bubble_iterativo.png "Análise do BubbleSort Iterativo") -->
+  <img src="./images/analise_bubble_iterativo.png" alt="Análise do BubbleSort Iterativo"/>
+</p>
+
 ## Melhor caso: $\Omega$ $5(n-1)t + 4t$ = $\Omega$ $5(n-1) + 4$ = $\Omega$ $5n - 1$
 
 ## $1 <= p <= n: [5(n-1)t + 13t]p + t = 5(n-1)p + 13p + 1$
@@ -56,6 +61,12 @@ Fim para
 bubbleSortR(V, n - 1)
 Fim bubbleSortR
 ```
+
+<p align="center">
+  <!-- ![image info](./images/analise_bubble_recursivo.png "Análise do BubbleSort Recursivo") -->
+  <img src="./images/analise_bubble_recursivo.png" alt="Análise do BubbleSort Recursivo"/>
+</p>
+
 $$
 T(n) 
 \begin{cases}
@@ -70,7 +81,12 @@ Vamos mostrar por indução que $T(n) \leq cn^2$, $\forall c, n \gt 0$, aplicand
 
 ### Caso base: $n = 1$.
 Temos da definição que $T(1) = 1$
-$T(n) \leq cn^2 \implies T(1) = 1 \leq  c(1^2) \implies c \geq 1$;
+$$
+\begin{align*}
+  T(n) \leq cn^2 & \implies T(1) = 1 \leq  c(1^2) \\
+                 &\implies c \geq 1
+\end{align*}
+$$
 
 ### Hipótese de Indução: 
 
@@ -127,7 +143,10 @@ $$
 Logo, $T(n)$ é O($n^2$)
 
 ## Árvore de Recursão
-![image info](./images/tabela_arvore_recursao.png "Tabela da Árvore de Recursão")
+<p align="center">
+  <!-- ![image info](./images/tabela_arvore_recursao.png "Tabela da Árvore de Recursão") -->
+  <img src="./images/tabela_arvore_recursao.png" alt="Tabela da Árvore de Recursão"/>
+</p>
 
 Sabemos que $T(1) = 1$. Assim,
 

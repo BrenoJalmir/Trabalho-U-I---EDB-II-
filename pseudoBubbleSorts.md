@@ -118,7 +118,7 @@ i=1 & & & T(n) \leq  T(n-1) + n \\
 i=2 & & & [T(n-2) + n] + n \\
 i=3 & & & [[T(n-3) + n] + n] + n \\
 ... & & & \\
-i   & & & T(n-i) + in \tag{I} \\
+i   & & & T(n-i) + in
 \end{align*}
 $$
 
@@ -126,11 +126,11 @@ Sabemos que $T(1) = 1$.
 
 $$
 \begin{align*}
-n - i = 1 \implies i = n - 1 \tag{II}
+n - i = 1 \implies i = n - 1
 \end{align*}
 $$
 
-Substituindo $(II)$ em $(I)$:
+Substituindo isso na fórmula geral que descobrimos acima:
 
 $$
 \begin{align*}

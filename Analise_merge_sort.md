@@ -143,26 +143,15 @@ void merge(int n, int *arr, int inicio, int meio, int fim) {
 
 ### Pior caso:
 
-$$
-5t + 7tn + 21t(n-1)
-$$
-$$
-5t + 7tn + 21tn - 21t
-$$
-$$
-28t\underline{n} - 16t \implies O(n)
-$$
+$$5t + 7tn + 21t(n-1)$$
+$$5t + 7tn + 21tn - 21t$$
+$$28t\underline{n} - 16t \implies O(n)$$
 
 ### Melhor caso:
-$$
-5t + 7tn + 21t(n-1)
-$$
-$$
-5t + 7tn + 21tn - 21t
-$$
-$$
-28t\underline{n} - 16t \implies \Omega(n)
-$$
+$$5t + 7tn + 21t(n-1)$$
+$$5t + 7tn + 21tn - 21t$$
+$$28t\underline{n} - 16t \implies \Omega(n)$$
+
 Para o _melhor_ e _pior_ caso do algoritmo merge temos Ω(n) e O(n), logo essa função é Θ(n). 
 ## Iterativo
 ```C++
@@ -210,14 +199,13 @@ $$
 T(n) = 2T\left( \frac{n}{2} \right) + n
 $$
 Assim chegamos na seguinte recorrência:
-$$
-T(n)\left\{
+$$T(n)
+\left\{
 \begin{split} 
 \Theta(1), \ se \ \ n=1\\
 2T\left( \frac{n}{2}\right) + \Theta(n), \ se \ \ n>1\\ 
 \end{split}
-\right.
-$$
+\right.$$
 
 
 ---

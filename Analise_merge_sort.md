@@ -153,7 +153,7 @@ $$5t + 7tn + 21tn - 21t$$
 $$28t\underline{n} - 16t \implies \Omega(n)$$
 
 Para o _melhor_ e _pior_ caso do algoritmo merge temos Ω(n) e O(n), logo essa função é Θ(n). 
-## Iterativo
+## Merge sort iterativo
 ```C++
 // Complexidade | quantas vezes vai rodar
 // Essa função simples retorna o menor parâmetro
@@ -175,7 +175,7 @@ void mergeSortI(int n, int *arr) {
 Observe que o ``tam_atual`` em ``for (tam_atual = 1; tam_atual <= n-1; tam_atual = 2 * tam_atual)`` dobra de valor a cada iteração. Com esse comportamento a cada chamada da função esse bloco de código irá ser executada _log(n)_ vezes. Como temos 2 _for_ aninhados, o exterior com complexidade _log(n)_ e o interior _n_, temos que nossa complexidade total é _n log(n)_.
 
 Outro fato importante para se observar é que o pior e o melhor caso serão _iguais_ pois não importa se o vetor está ordenado ou desordenado, o algoritmo sempre executará os mesmas instruções para iterar sobre tal vetor. Logo podemos afirmar que a complexidade é _Θ(n log(n))_.
-## Recursivo
+## Merge sort recursivo
 ```C++
 void mergeSortR(int n, int *arr, int inicio, int fim) {
     if (inicio < fim) {                                // Θ(1)

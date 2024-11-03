@@ -199,13 +199,13 @@ $$
 T(n) = 2T\left( \frac{n}{2} \right) + n
 $$
 Assim chegamos na seguinte recorrência:
-$$T(n)
-\left\{
-\begin{split} 
-\Theta(1), \ se \ \ n=1\\
-2T\left( \frac{n}{2}\right) + \Theta(n), \ se \ \ n>1\\ 
-\end{split}
-\right.$$
+$$
+T(n) 
+\begin{cases}
+  \Theta (1) & \text{if } x = 1 \\
+  2T\left( \frac{n}{2}\right) + \Theta(n)  & \text{if } x \gt 1
+\end{cases}
+$$
 
 
 ---

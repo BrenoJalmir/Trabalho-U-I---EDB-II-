@@ -153,6 +153,7 @@ $$
 $$
 
 ##### Melhor caso:
+
 $$
 5t + 7tn + 21t(n-1)
 $$
@@ -162,6 +163,7 @@ $$
 $$
 28t\underline{n} - 16t \implies \Omega(n)
 $$
+
 Para o _melhor_ e _pior_ caso do algoritmo merge temos Ω(n) e O(n), logo essa função é Θ(n). 
 ## Iterativo
 ```C++
@@ -199,6 +201,7 @@ void mergeSortR(int n, int *arr, int inicio, int fim) {
 
 Isso ocorre pois a cada chamada recursiva o problema é dividido pela metade até que não seja mais possível dividi-lo em partes menores. Esse comportamento nos dá a seguinte relação de recorrência:
 ### Relação de recorrência (RR)
+
 $$
 T(n) = \Theta(1) + T\left( \frac{n}{2} \right) + T\left( \frac{n}{2} \right) + \Theta(n)
 $$
@@ -216,14 +219,18 @@ T(n)
   2T\left( \frac{n}{2}\right) + \Theta(n)  & \text{if } n \gt 1
 \end{cases}
 $$
+
 Com essa fórmula de recorrência em mente, podemos resolve-la por meio dos 4 métodos estudados.
 ### Método da substituição
 #### T(n) é limitado por n log(n)?
 ##### Hipótese indutiva (HI):
+
 $$
 T(k)\leq c\times k\log k, \forall k \in \mathbb{N},\ tal\ que\ k>1 
 $$
+
 ##### Passo indutivo:
+
 $$
 T(n) = 2T\left( \frac{n}{2} \right) + \Theta(n)
 $$
@@ -237,17 +244,24 @@ $$
 T(n) = cn\times(\log n - \cancel{\log 2}^{1}) + n
 $$
 $$
-T(n) = c\times n\log n-\cancel{cn + n},\ removendo\ os\ termos\ de\ menor\ ordem
+T(n) = c\times n\log n- \cancel{cn + n}
 $$
 $$
-T(n) \leq c\times n\log n\ \therefore\ T(n)\ é\ O(n\log n)
+T(n) \leq c\times n\log n\,\ mantendo\ os\ termos\ de\ maior\ ordem
 $$
+$$
+\therefore\ T(n)\ é\ O(n\log n)
+$$
+
 #### T(n) é limitado por n?
 ##### Hipótese indutiva (HI):
+
 $$
 T(k) \leq c\times n, \forall k \in \mathbb{N},\ tal\ que\ k>1
 $$
+
 ##### Passo indutivo:
+
 $$
 T(n) = 2T\left( \frac{n}{2} \right) + \Theta(n)
 $$
@@ -261,23 +275,32 @@ $$
 T(n) = cn + n
 $$
 $$
-T(n) \leq cn+n \neq T(n) \leq cn \therefore\ T(n)\ não\ é\ limitado\ por\ n
+T(n) \leq cn+n \neq T(n) \leq cn 
 $$
+$$
+\therefore\ T(n)\ não\ é\ limitado\ por\ n
+$$
+
 Assim provamos que o algoritmo merge sort é $O(n\log n)$.
 ### Método da iteração 
 `i: número de iterações`
 `i=1`
+
 $$
 T(n) = 2T\left( \frac{n}{2} \right) + n
 $$
+
 `i=2`
+
 $$
 T(n) = 2T\left( 2T\left( \frac{n}{4} \right) + \frac{cn}{2} \right) + n
 $$
 $$
 T(n) = 4T\left( \frac{n}{4} \right) + 2n
 $$
+
 `i=3`
+
 $$
 T(n) = 4\left( 2T\left( \frac{n}{8} \right) + \frac{cn}{4}\right) + 2n
 $$
@@ -287,12 +310,16 @@ $$
 $$
 \dots
 $$
+
 `i=k`
+
 $$
 T(n) = 2^kT\left( \frac{n}{2^k} \right) + kn
 $$
+
 A condição de parada do algoritmo ocorre quando $\frac{n}{2^k}=1$.
 Logo temos:
+
 $$
 \frac{n}{2^k}=1
 $$
@@ -302,7 +329,9 @@ $$
 $$
 k=\log_{2}n
 $$
+
 Substituindo na fórmula temos:
+
 $$
 T(n) = 2^{\log_{2}n}T\left( \cancel{\frac{n}{2^{\log_{2}n}}}^1 \right)+\log_{2}n\times n
 $$
@@ -318,8 +347,10 @@ $$
 $$
 \therefore T(n)\ é\ O(n\log n)
 $$
+
 ### Árvore de recursão
-![recursion_tree.png](image_sources/recursion_tree.png)
+![recursion_tree.png](images/recursion_tree.png)
+
 $$
 \frac{n}{2^i} = 1 \implies n = 2^i \implies  \underline{i=\log_{2}n}
 $$
@@ -333,13 +364,14 @@ $$
 $$\therefore T(n)\ é\ O(n\log n)$$
 ### Método mestre:
 
-> [!NOTE] Regras do método mestre
+> Regras do método mestre
 > $$T(n) = aT\left( \frac{n}{b} \right) + \Theta(n^k)$$
 > 1. Se $a>b^k$, então T(n) é $\Theta(n^{\log_{b}a})$
 > 2. Se $a=n^k$, então T(n) é  $\Theta(n^k\log n)$
 > 3. Se $a<b^k$, então T(n) é $\Theta(n^k)$
 
 Com o merge sort nós temos o seguinte:
+
 $$
 T(n) = 2T\left( \frac{n}{2} \right) + \Theta(n)
 \begin{cases}
@@ -348,6 +380,7 @@ T(n) = 2T\left( \frac{n}{2} \right) + \Theta(n)
   k=1
 \end{cases}
 $$
+
 Como $2=2^1$, T(n) é $\Theta(n\log n)$.
 
 

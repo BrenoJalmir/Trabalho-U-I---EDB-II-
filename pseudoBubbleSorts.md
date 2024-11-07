@@ -84,8 +84,7 @@ Temos da definição que $T(1) = 1$. Disso
 
 $$
 \begin{align*}
-  T(n) \leq cn^2 & \implies T(1) = 1 \leq  c(1^2) \\
-                 &\implies c \geq 1
+  T(1) = 1 &\leq  c(1^2) &\implies c \geq 1
 \end{align*}
 $$
 
@@ -100,12 +99,29 @@ Observe que $n-1 < n$, $\forall n > 1$.
 #### Assim,
 $$
 \begin{align*}
-  T(n) \leq T(n-1) + n \leq c(n-1)^2 + n &\leq cn^2 \\
-  cn^2 - 2cn + c + n &\leq cn^2 \\
-  c &\leq 2cn - n \\
-  c &\leq n(2c - 1)
+  T(n) & \leq T(n-1) + n &\leq c(n-1)^2 + n &\leq cn^2 \\
+   & & cn^2 - 2cn + c + n &\leq cn^2\\
+  %  & & c &\leq 2cn - n \\
+  %  & & c &\leq n(2c - 1)
 \end{align*}
 $$
+
+Logo, precisamos apenas garantir que a expressão $-2cn + c + n \leq 0$ para que a igualdade seja verdade. 
+
+Podemos reorganizar a expressão para
+
+$$
+\begin{align*}
+  c(-2n + 1) + n &\leq 0 \\
+  c(-2n + 1) &\leq -n \\
+  c &\geq \dfrac{-n}{-2n+1} \\
+  c &\geq \dfrac{n}{2n+1} \\
+\end{align*}
+$$
+
+Como temos que $n > 1$, então basta que $c \geq 1$. Podemos dizer então que $c = 2$.
+
+Logo, $T(n)$ é O($n^2$)
 
 ## Método da Iteração
 $$ T(n) \leq T(n-1) + n $$

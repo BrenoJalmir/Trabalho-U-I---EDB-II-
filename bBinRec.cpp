@@ -1,8 +1,11 @@
 #include <iostream>
 #include <chrono>
+#include <vector>
+#include <fstream>
+
 using namespace std;
 
-int bBinRec(int A[], int esq, int dir, int x) {
+int bBinRec(const vector<int>& A, int esq, int dir, int x) {
     if (esq > dir) {
         return -1; // Caso base: elemento não encontrado
     }
@@ -22,28 +25,29 @@ int bBinRec(int A[], int esq, int dir, int x) {
 
 int main() {
     // Capturando tempo de execução
-    // Captura o tempo de início
     auto start = std::chrono::high_resolution_clock::now();
 
-        // Exemplo de uso - substitua o código abaixo
-        int A[] = {2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 81, 91, 102, 114, 125};
-        int n = sizeof(A) / sizeof(A[0]); //Essa divisão resulta no tamanho do vetor baseado na quantidade de bytes que ele ocupa e no tipo de elementos nele (tentei garantir maior performance).
+    vector<int> idades;
+    std::ifstream file("./lists/idades_10000_ordenadas.txt");
 
-        int x = 56; // Elemento a ser buscado
+    std::string line;
+    while (std::getline(file, line)) {
+        idades.push_back(std::stoi(line));
+    }
 
-        int resultado = bBinRec(A, 0, n - 1, x);
-        if (resultado != -1) {
-            cout << "Elemento encontrado no índice: " << resultado << endl;
-        }
-        else {
-            cout << "Elemento não encontrado." << endl;
-        }
+    int resultado = bBinRec(idades, 0, idades.size() - 1, 30); // Usando .size() (complexidade O(1)) para obter o tamanho do vetor
+    if (resultado != -1) {
+        cout << "Elemento encontrado no índice: " << resultado << endl;
+    }
+    else {
+        cout << "Elemento não encontrado." << endl;
+    }
 
     // Captura o tempo de término
     auto end = std::chrono::high_resolution_clock::now();
 
     // Calcula a duração em milissegundos
-    std::chrono::duration<double, std::milli> duration = end - start;
+    std::chrono::duration<double, std::micro> duration = end - start;
 
     // Exibe o tempo de execução
     std::cout << "O código levou " << duration.count() << " milissegundos para rodar." << std::endl;

@@ -1,8 +1,11 @@
 #include <iostream>
+#include <vector>
 #include <chrono>
+#include <fstream>
+
 using namespace std;
 
-int buscaBinariaRecursiva(int A[], int esq, int dir, int x) {
+int buscaBinariaRecursiva(const vector<int>& A, int esq, int dir, int x) {
 
     if (esq > dir) {
         return -1; // Caso base: elemento não encontrado
@@ -21,20 +24,23 @@ int buscaBinariaRecursiva(int A[], int esq, int dir, int x) {
     }
 }
 
-int buscaBinaria(int A[], int n, int x) {
-    return buscaBinariaRecursiva(A, 0, n - 1, x);
+int buscaBinaria(const vector<int>& A, int x) {
+    return buscaBinariaRecursiva(A, 0, A.size() - 1, x);
 }
 
 int main() {
     // Captura o tempo de início
     auto start = std::chrono::high_resolution_clock::now();
 
-    //Exemplo de uso
-    int A[] = {1, 3, 5, 7, 9};
-    int n = sizeof(A) / sizeof(A[0]); //Essa divisão resulta no tamanho do vetor baseado na quantidade de bytes que ele ocupa e no tipo de elementos nele (tentei garantir maior performance).
-    int x = 5;
+    vector<int> idades;
+    std::ifstream file("./lists/idades_10000_ordenadas.txt");
 
-    int resultado = buscaBinaria(A, n, x);
+    std::string line;
+    while (std::getline(file, line)) {
+        idades.push_back(std::stoi(line));
+    }
+
+    int resultado = buscaBinaria(idades, 30);
     if (resultado != -1) {
         cout << "Elemento encontrado no índice: " << resultado << endl;
     }
@@ -46,10 +52,10 @@ int main() {
     auto end = std::chrono::high_resolution_clock::now();
 
     // Calcula a duração em milissegundos
-    std::chrono::duration<double, std::milli> duration = end - start;
+    std::chrono::duration<double, std::micro> duration = end - start;
 
     // Exibe o tempo de execução
-    std::cout << "O código levou " << duration.count() << " milissegundos para rodar." << std::endl;
+    std::cout << "O código levou " << duration.count() << " microssegundos para rodar." << std::endl;
 
     return 0;
 }

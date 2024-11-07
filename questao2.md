@@ -286,13 +286,13 @@ int main() {
 * Tabela:
 | Algoritmo    | Instância 100    | Instância 1000   | Instância 10000     |
 |--------------|------------------|------------------|---------------------|
-| buscaBinaria | 0 microssegundos | 0 microssegundos | 4000 microssegundos |
+| buscaBinaria | 0 microssegundos | 0 microssegundos | 3000 microssegundos |
 | bBinRec      | 0 microssegundos | 0 microssegundos | 5000 microssegundos |
 
 * Gráfico: 
 
-![Gráfico de comparação recursiva](https://i.ibb.co/4K47nV3/recursiva-Graph.png)
+![Gráfico de comparação recursiva](https://i.ibb.co/sqdCKWy/recursiva-Graph.png)
 
 Para coletar os dados de tempo de execução dos programas, usamos o número 30 como o número a ser buscado pelas duas funções.
 
-Essas duas funções foram um pouco mais difíceis de comparar, pois a única diferença perceptível é a partir de vetores com mais de 10000 elementos. Para vetores menores, no ambiente computacional testado, as duas funções não fazem muita diferença. É perceptível, no entanto, que a função `buscaBinaria` cresce mais rápido que `bBinRec`.
+Essas duas funções foram um pouco mais difíceis de comparar, pois a única diferença perceptível é a partir de vetores com mais de 10000 elementos. Para vetores menores, no ambiente computacional testado, as duas funções não fazem muita diferença. É perceptível, no entanto, que a função `buscaBinaria` cresce mais devagar que `bBinRec`, principalmente em valores mais altos (como em vetores de tamanho 10 mil), onde a segunda função leva 66% a mais de tempo para ser executada.

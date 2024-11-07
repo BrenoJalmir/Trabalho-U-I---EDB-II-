@@ -8,13 +8,13 @@
 // Retorna o nome da lista
 std::string listGenerator(int size);
 // Copia o conteúdo da lista para um vetor de mesmo tamanho
-// Tem como parâmetros uma referência ao vetor, o nome do arquivo e o número de linhas
+// Tem como parâmetros o vetor, o nome do arquivo e o número de linhas
 // Retorna 0 em caso de sucesso e 1 caso falhe
-int listToVector(int* &vector, std::string fileName, int size);
+int listToVector(int* vector, std::string fileName, int size);
 // Copia o conteúdo de um vetor para uma arquivo txt
-// Tem como parâmetro uma referência ao vetor e o tamanho dele
+// Tem como parâmetros o vetor e o tamanho dele
 // Retorna 0 em caso de sucesso e 1 caso falhe
-int vectorToList(int* &vector, int size);
+int vectorToList(int* vector, int size);
 // Retorna o número de linhas da lista
 // Tem como parâmetro uma referência ao arquivo
 // Retorna o número de linhas ou 0 caso falhe

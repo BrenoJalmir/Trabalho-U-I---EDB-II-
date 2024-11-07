@@ -159,27 +159,24 @@ Para Instâncias de tamanho 1000, já podermos ver uma diferença maior. Baseand
 
 using namespace std;
 
-int buscaBinariaRecursiva(const vector<int>& A, int esq, int dir, int x) {
+int buscaBinaria(const std::vector<int>& A, int x) {
+    int esq = 0; // Índice inicial
+    int dir = A.size(); // Tamanho do vetor
 
-    if (esq > dir) {
-        return -1; // Caso base: elemento não encontrado
+    while (esq < dir) {
+        int m = (esq + dir) / 2; // Ponto médio
+        if (x > A[m]) {
+            esq = m + 1; // Ajusta a posição da esquerda
+        } else {
+            dir = m; // Ajusta a posição da direita
+        }
     }
 
-    int m = (esq + dir) / 2; // Define o índice do elemento central da lista
+    if (A[esq] == x) {
+        return esq; // Retorna o índice se encontrar o valor
+    }
 
-    if (A[m] == x) {
-        return m; // Elemento encontrado
-    }
-    else if (A[m] < x) {
-        return buscaBinariaRecursiva(A, m + 1, dir, x); // Busca na metade direita
-    }
-    else {
-        return buscaBinariaRecursiva(A, esq, m - 1, x); // Busca na metade esquerda
-    }
-}
-
-int buscaBinaria(const vector<int>& A, int x) {
-    return buscaBinariaRecursiva(A, 0, A.size() - 1, x);
+    return -1; // Caso não encontre
 }
 
 int main() {

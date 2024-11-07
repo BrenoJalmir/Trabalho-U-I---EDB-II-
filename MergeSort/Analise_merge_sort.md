@@ -1,3 +1,85 @@
+# Pseudocódigos
+
+## Comportamento do merge sort
+
+Aqui está um exemplo de como o merge sort se comporta. Ele utiliza uma estratégia de dividir para conquistar, na qual ele divide o vetor a ser ordenado em subvetores com metade do tamanho até não conseguir dividir mais. Quando isso acontece ele começa a juntar os subvetores ordenando eles até reconstruir o vetor original de forma ordenada.
+
+![merge-sort-exemplo.png](../images/merge-sort-exemplo.png)
+
+## Merge sort recursivo
+```
+Função MergeSortRecursivo(array, inicio, fim)
+	
+    Se inicio < fim Então:
+        meio ← (inicio + fim) / 2
+        MergeSortRecursivo(array, inicio, meio)
+        MergeSortRecursivo(array, meio + 1, fim)
+        Merge(array, inicio, meio, fim)
+    FimSe
+	
+FimFunção
+```
+## Merge sort iterativo
+```
+Algoritmo MergeSortIterativo(array, n)
+    tam_atual ← 1
+    
+    Enquanto tam_atual <= n - 1 Faça:
+        inicio ← 0
+		
+        Enquanto inicio < n - 1 Faça:
+            meio ← mínimo(inicio + tam_atual - 1, n - 1)
+            
+            fim ← mínimo(inicio + 2 * tam_atual - 1, n - 1)
+            
+            Merge(array, inicio, meio, fim)
+            
+            inicio ← inicio + 2 * tam_atual
+        FimEnquanto
+		
+        tam_atual ← 2 * tam_atual
+    FimEnquanto
+FimAlgoritmo
+```
+## Função merge
+```
+Função Merge(array, inicio, meio, fim)
+    i ← inicio
+    j ← meio + 1
+    k ← inicio
+    aux ← novo vetor com tamanho de array
+	
+    Enquanto i <= meio E j <= fim Faça:
+        Se array[i] < array[j] Então
+            aux[k] ← array[i]
+            i ← i + 1
+        Senão:
+            aux[k] ← array[j]
+            j ← j + 1
+        FimSe
+        k ← k + 1
+    FimEnquanto
+	
+    Enquanto i <= meio Faça:
+        aux[k] ← array[i]
+        i ← i + 1
+        k ← k + 1
+    FimEnquanto
+	
+    Enquanto j <= fim Faça:
+        aux[k] ← array[j]
+        j ← j + 1
+        k ← k + 1
+    FimEnquanto
+	
+    Para p de inicio até fim Faça:
+        array[p] ← aux[p]
+    FimPara
+FimAlgoritmo
+```
+
+---
+
 # Análise de complexidade
 ## Função merge
 ```C++
@@ -184,7 +266,9 @@ void mergeSortI(int n, int *arr) {
 }
 ```
 
-Observe que o ``tam_atual`` em ``for (tam_atual = 1; tam_atual <= n-1; tam_atual = 2 * tam_atual)`` dobra de valor a cada iteração, e consequentemente o problema é dividido pela metade. Com esse comportamento a cada chamada da função esse bloco de código irá ser executada _log(n)_ vezes. Como temos 2 _for_ aninhados, o exterior com complexidade _log(n)_ e o interior _n_, temos que nossa complexidade total é _n log(n)_.
+Observe que o ``tam_atual`` em ``for (tam_atual = 1; tam_atual <= n-1; tam_atual = 2 * tam_atual)`` dobra de valor a cada iteração, e consequentemente o problema é dividido pela metade. Com esse comportamento a cada chamada da função esse bloco de código irá ser executada _log(n)_ vezes. Como temos 2 _for_ aninhados, o exterior com complexidade _log(n)_ e o interior _n_, temos que nossa complexidade total é _n log(n)_. Abaixo deixei uma imagem para ilustrar melhor como cada iteração do algoritmo funciona:
+
+![demonstracao_mergeSort_iterativo.jpeg](../images/demonstracao_mergeSort_iterativo.jpeg)
 
 Outro fato importante para se observar é que o pior e o melhor caso serão _iguais_ pois não importa se o vetor está ordenado ou desordenado, o algoritmo sempre executará os mesmas instruções para iterar sobre tal vetor. Logo podemos afirmar que a complexidade é _Θ(n log(n))_.
 ## Recursivo
@@ -349,7 +433,7 @@ $$
 $$
 
 ### Árvore de recursão
-![recursion_tree.png](images/recursion_tree.png)
+![recursion_tree.png](../images/recursion_tree.png)
 
 $$
 \frac{n}{2^i} = 1 \implies n = 2^i \implies  \underline{i=\log_{2}n}
@@ -382,78 +466,3 @@ T(n) = 2T\left( \frac{n}{2} \right) + \Theta(n)
 $$
 
 Como $2=2^1$, T(n) é $\Theta(n\log n)$.
-
-
----
-# Pseudocódigos
-## Merge sort recursivo
-```
-Função MergeSortRecursivo(array, inicio, fim)
-	
-    Se inicio < fim Então:
-        meio ← (inicio + fim) / 2
-        MergeSortRecursivo(array, inicio, meio)
-        MergeSortRecursivo(array, meio + 1, fim)
-        Merge(array, inicio, meio, fim)
-    FimSe
-	
-FimFunção
-```
-## Merge sort iterativo
-```
-Algoritmo MergeSortIterativo(array, n)
-    tam_atual ← 1
-    
-    Enquanto tam_atual <= n - 1 Faça:
-        inicio ← 0
-		
-        Enquanto inicio < n - 1 Faça:
-            meio ← mínimo(inicio + tam_atual - 1, n - 1)
-            
-            fim ← mínimo(inicio + 2 * tam_atual - 1, n - 1)
-            
-            Merge(array, inicio, meio, fim)
-            
-            inicio ← inicio + 2 * tam_atual
-        FimEnquanto
-		
-        tam_atual ← 2 * tam_atual
-    FimEnquanto
-FimAlgoritmo
-```
-## Função merge
-```
-Função Merge(array, inicio, meio, fim)
-    i ← inicio
-    j ← meio + 1
-    k ← inicio
-    aux ← novo vetor com tamanho de array
-	
-    Enquanto i <= meio E j <= fim Faça:
-        Se array[i] < array[j] Então
-            aux[k] ← array[i]
-            i ← i + 1
-        Senão:
-            aux[k] ← array[j]
-            j ← j + 1
-        FimSe
-        k ← k + 1
-    FimEnquanto
-	
-    Enquanto i <= meio Faça:
-        aux[k] ← array[i]
-        i ← i + 1
-        k ← k + 1
-    FimEnquanto
-	
-    Enquanto j <= fim Faça:
-        aux[k] ← array[j]
-        j ← j + 1
-        k ← k + 1
-    FimEnquanto
-	
-    Para p de inicio até fim Faça:
-        array[p] ← aux[p]
-    FimPara
-FimAlgoritmo
-```

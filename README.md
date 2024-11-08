@@ -4,7 +4,10 @@ Bem-vindo ao repositório do projeto de Estrutura de Dados 2. Este projeto foi d
 
 ## Descrição do Projeto
 
-O projeto consiste na implementação e análise de algoritmos de ordenação, incluindo o **Merge Sort**, **Bubble Sort** e **Quick Sort** em suas versões recursivas e iterativas, além da análise de outros algoritmos vistos em sala como o **IdadeRep** e **IdadeRep2** bem como a análise dos tempos de execução desses. Além disso, foi desenvolvido um gerador de listas aleatórias para testar a eficácia e desempenho dos algoritmos.
+O projeto consiste na implementação e análise de algoritmos de ordenação, incluindo o **Merge Sort**, **Bubble Sort** e **Quick Sort** em suas versões recursivas e iterativas, além da análise de outros algoritmos vistos em sala como o **IdadeRep** e **IdadeRep2** bem como a análise dos tempos de execução desses. Além disso, foi desenvolvido um gerador de listas aleatórias para testar a eficácia e desempenho dos algoritmos. Também disponibilizamos um vídeo contendo a análise do tempo de execução
+
+### Vídeo
+- [Análise em vídeo](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/tree/main/Video)
 
 ### Tecnologias Utilizadas
 - Linguagem de programação: C/C++

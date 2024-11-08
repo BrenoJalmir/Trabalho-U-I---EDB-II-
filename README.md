@@ -17,8 +17,8 @@ Os algoritmos implementados estão todos organizados em suas respectivas pastas 
 
 ### Análises
 - [Análise de Complexidade do Merge Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/MergeSort/Analise_merge_sort.md)
-- [Análise de Complexidade do Bubble Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/pseudoBubbleSorts.md)
-- [Análise de Complexidade do Quick Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/QuickSort/analise_quick_sort.md)
+- [Análise de Complexidade do Bubble Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/BubbleSort/Analise.md)
+- [Análise de Complexidade do Quick Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/QuickSort/Analise.md)
 - [Análise das funções iterativas e recursivas (Questão 2)](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/Iterativas%20e%20Recursivas/Analise.md)
 
 ## Algoritmos Implementados

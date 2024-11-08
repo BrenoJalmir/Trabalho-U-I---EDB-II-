@@ -18,7 +18,7 @@ Fim bubbleSort
 
 <p align="center">
   <!-- ![image info](./images/analise_bubble_iterativo.png "Análise do BubbleSort Iterativo") -->
-  <img src="./images/analise_bubble_iterativo.png" alt="Análise do BubbleSort Iterativo"/>
+  <img src="../images/analise_bubble_iterativo.png" alt="Análise do BubbleSort Iterativo"/>
 </p>
 
 ## Melhor caso: $\Omega$ $5(n-1)t + 4t$ = $\Omega$ $5(n-1) + 4$ = $\Omega$ $5n - 1$
@@ -64,7 +64,7 @@ Fim bubbleSortR
 
 <p align="center">
   <!-- ![image info](./images/analise_bubble_recursivo.png "Análise do BubbleSort Recursivo") -->
-  <img src="./images/analise_bubble_recursivo.png" alt="Análise do BubbleSort Recursivo"/>
+  <img src="../images/analise_bubble_recursivo.png" alt="Análise do BubbleSort Recursivo"/>
 </p>
 
 $$
@@ -163,7 +163,7 @@ Logo, $T(n)$ é O($n^2$)
 ## Árvore de Recursão
 <p align="center">
   <!-- ![image info](./images/tabela_arvore_recursao.png "Tabela da Árvore de Recursão") -->
-  <img src="./images/tabela_arvore_recursao.png" alt="Tabela da Árvore de Recursão"/>
+  <img src="../images/tabela_arvore_recursao.png" alt="Tabela da Árvore de Recursão"/>
 </p>
 
 Sabemos que $T(1) = 1$. Assim,

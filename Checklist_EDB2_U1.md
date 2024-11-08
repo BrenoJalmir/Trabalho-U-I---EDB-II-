@@ -15,7 +15,7 @@
 	- [x] 2.1.B. Crie instâncias aleatórias com idades (inteiros) variando entre 0 e 100, com tamanhos n=100, n=1.000, n=10.000;
 	- [ ] 2.1.C. Compute os tempos de processamento e compare com os resultados da análise assintótica vista em sala.
 - [ ] 2.2. Função recursiva 
-	- [ ] 2.2.A. Implemente os códigos buscaBinaria e bBinRec, vistos em sala de aula; 
+	- [x] 2.2.A. Implemente os códigos buscaBinaria e bBinRec, vistos em sala de aula; 
 	- [x] 2.2.B. Crie instâncias aleatórias com idades (inteiros) variando entre 0 e 100, com tamanhos n=100, n=1.000, n=10.000;
 	- [ ] 2.2.C. Compute os tempos de processamento e compare com os resultados da análise assintótica vista em sala.
 - [ ] 2.3. Implemente os algoritmos de ordenação baseados nos pseudocódigos que você sugeriu nos itens 1.A, 1.B e 1.C, em suas versões iterativa e recursiva.

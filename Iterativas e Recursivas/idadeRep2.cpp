@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include<algorithm>
 #include <random>
 #include <chrono>
 #include <fstream>
@@ -7,23 +8,11 @@
 using namespace std;
 
 
-bool idadeRep(const vector<int>& Idade){
-    int tam = Idade.size();
-    int menor = 200;
-    for(int i = 0; i<tam; i++){
-        if (Idade[i]<menor){
-        menor = Idade[i];
-        }
-    }
-
-    for(int i = 0; i<tam; i++){
-        if (Idade[i]==menor){
-        return true;
-        }
-    }
-
-    return false;
+bool idadeRep2(vector<int> Idade){
+sort(Idade.begin(),Idade.end());
+return Idade[0]==Idade[1];
 }
+
 
 int main() {
     // Captura o tempo de início
@@ -37,12 +26,11 @@ int main() {
         idades.push_back(std::stoi(line));
     }
 
-    if (idadeRep(idades)) {
+    if (idadeRep2(idades)) {
         cout << "There are repeated minimum ages." << endl;
     } else {
         cout << "No repeated minimum ages." << endl;
     }
-
 
     // Captura o tempo de término
     auto end = std::chrono::high_resolution_clock::now();

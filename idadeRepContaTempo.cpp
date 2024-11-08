@@ -2,10 +2,19 @@
 #include <vector>
 #include <random>
 #include <chrono>
-#include <fstream>
 
 using namespace std;
 
+
+//Gera números aleatórios de 1 a 100
+int generateNumber(){
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    std::uniform_int_distribution<> dist(1, 100);
+
+    return dist(gen);
+}
 
 bool idadeRep(const vector<int>& Idade){
     int tam = Idade.size();
@@ -30,11 +39,9 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
 
     vector<int> idades;
-    std::ifstream file("./lists/idades_10000.txt");
 
-    std::string line;
-    while (std::getline(file, line)) {
-        idades.push_back(std::stoi(line));
+    for(int i=0; i<1000000; i++){
+        idades.push_back(generateNumber());
     }
 
     if (idadeRep(idades)) {
@@ -48,10 +55,10 @@ int main() {
     auto end = std::chrono::high_resolution_clock::now();
 
     // Calcula a duração em milissegundos
-    std::chrono::duration<double, std::micro> duration = end - start;
+    std::chrono::duration<double, std::milli> duration = end - start;
 
     // Exibe o tempo de execução
-    std::cout << "O código levou " << duration.count() << " microssegundos para rodar." << std::endl;
+    std::cout << "O código levou " << duration.count() << " milissegundos para rodar." << std::endl;
 
     return 0;
 }

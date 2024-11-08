@@ -131,6 +131,7 @@ int main() {
 #### Comparação
 
 * Tabela:
+
 | Algoritmo | Instância 100    | Instância 1000      | Instância 10000     |
 |-----------|------------------|---------------------|---------------------|
 | idadeRep  | 0 microssegundos | 0 microssegundos    | 4001 microssegundos |
@@ -281,6 +282,7 @@ int main() {
 #### Comparação
 
 * Tabela:
+
 | Algoritmo    | Instância 100    | Instância 1000   | Instância 10000     |
 |--------------|------------------|------------------|---------------------|
 | buscaBinaria | 0 microssegundos | 0 microssegundos | 3000 microssegundos |

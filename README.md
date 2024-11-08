@@ -19,6 +19,7 @@ Os algoritmos implementados estão todos organizados em suas respectivas pastas 
 - [Análise de Complexidade do Merge Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/MergeSort/Analise_merge_sort.md)
 - [Análise de Complexidade do Bubble Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/pseudoBubbleSorts.md)
 - [Análise de Complexidade do Quick Sort](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/QuickSort/analise_quick_sort.md)
+- [Análise das funções iterativas e recursivas (Questão 2)](https://github.com/BrenoJalmir/Trabalho_U1_EDB2/blob/main/Iterativas%20e%20Recursivas/Analise.md)
 
 ## Algoritmos Implementados
 
@@ -29,4 +30,4 @@ Os algoritmos implementados estão todos organizados em suas respectivas pastas 
 
 ## Integrantes do grupo
 - Filipe Fernandes Campos: Análise de complexidade do merge sort, código do merge sort e implementação da biblioteca de geração e leitura das listas
-- 
+- Warlike Soares: Implementação das funções idadeRep, idadeRep2, buscaBinaria, bBinRec; Coleta dos dados (tempo de execução) das funções e criação de tabelas e gráficos; Análise das funções das questões 2.1. e 2.2.

@@ -21,8 +21,8 @@ int main() {
 
     listToVector(arr, fileName, n);
     
-    // quickSortIterativo(arr, 0, n);
-    quickSortRecursivo(arr, 0, n);
+    quickSortIterativo(arr, 0, n);
+    // quickSortRecursivo(arr, 0, n);
 
     vectorToList(arr, n);
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-// g++ ./QuickSort/tempoQuickSort.cpp ./QuickSort/quickSortIterativo.cpp ./QuickSort/funcaoParticionar.cpp ./QuickSort/quickSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2.5 -g -W
+// g++ ./QuickSort/tempoQuickSort.cpp ./QuickSort/quickSortIterativo.cpp ./QuickSort/funcaoParticionar.cpp ./QuickSort/quickSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2_5 -g -W
 
 // Função main para transformar a lista em vetor e chamar o algoritmo de ordenação
 int main() {
@@ -21,8 +21,8 @@ int main() {
 
     listToVector(arr, fileName, n);
     
-    quickSortIterativo(arr, 0, n);
-    // quickSortRecursivo(arr, 0, n);
+    // quickSortIterativo(arr, 0, n);
+    quickSortRecursivo(arr, 0, n);
 
     vectorToList(arr, n);
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-// g++ ./MergeSort/tempoMergeSort.cpp ./MergeSort/mergeSortIterativo.cpp ./MergeSort/funcaoMerge.cpp ./MergeSort/mergeSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2.5 -g -W
+// g++ ./MergeSort/tempoMergeSort.cpp ./MergeSort/mergeSortIterativo.cpp ./MergeSort/funcaoMerge.cpp ./MergeSort/mergeSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2_5 -g -W
 
 // Função main para transformar a lista em vetor e chamar o algoritmo de ordenação
 int main() {

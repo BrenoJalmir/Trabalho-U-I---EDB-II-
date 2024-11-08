@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-// g++ ./BubbleSort/tempoBubbleSort.cpp ./BubbleSort/bubbleSortIterativo.cpp ./BubbleSort/bubbleSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2.5 -g -W
+// g++ ./BubbleSort/tempoBubbleSort.cpp ./BubbleSort/bubbleSortIterativo.cpp ./BubbleSort/bubbleSortRecursivo.cpp ./RNG/list_RNG.cpp -o q2_5 -g -W
 
 /* Função main para transformar a lista em vetor, chamar o algoritmo de ordenação
    e testar o tempo de execução do algoritmo */ 
@@ -22,7 +22,7 @@ int main() {
 
     listToVector(arr, fileName, n);
     
-    // bubbleSort(arr, n);
+    // bubbleSortI(arr, n);
     bubbleSortR(arr, n);
 
     vectorToList(arr, n);

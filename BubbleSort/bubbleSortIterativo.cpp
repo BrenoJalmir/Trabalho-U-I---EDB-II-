@@ -1,7 +1,7 @@
 #include "bubbleSort.hpp"
 
 // Função bubbleSort iterativa, que recebe um ponteiro de inteiros v e um inteiro n, que é o tamanho do vetor v.
-void bubbleSort(int *v, int n){
+void bubbleSortI(int *v, int n){
   // Começa a função supondo que o vetor está desordenado
   int ordenado = 0;
   // Enquanto o vetor não estiver ordenado

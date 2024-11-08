@@ -25,6 +25,7 @@ Os algoritmos implementados estão todos organizados em suas respectivas pastas 
 
 - **Merge Sort Recursivo/Iterativo**
 - **Bubble Sort Recusivo/Iterativo**
+- **Quick Sor Recursivo/Iterativo**
 - **IdadeRep2**
 
 
@@ -32,3 +33,4 @@ Os algoritmos implementados estão todos organizados em suas respectivas pastas 
 - Filipe Fernandes Campos: Análise de complexidade do merge sort, código do merge sort e implementação da biblioteca de geração e leitura das listas
 - Warlike Soares: Implementação das funções idadeRep, idadeRep2, buscaBinaria, bBinRec; Coleta dos dados (tempo de execução) das funções e criação de tabelas e gráficos; Análise das funções das questões 2.1. e 2.2.
 - Breno Jalmir de Medeiros Almeida: Pseudocódigo do BubbleSort; Análise de complexidade do BubbleSort; Implementação do BubbleSort.
+- João Guilherme Martins de Azevedo: Pseudocódigo do QuickSort; Análise de complexidade do QuickSort; Implementação do QuickSort.

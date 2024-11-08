@@ -6,7 +6,7 @@
 * **Sistema operacional**: Windows 10 pro
 
 
-### 2.1. Função interativa
+### 2.1. Função iterativa
 #### idadeRep
 <details>
   <summary>Clique aqui para ver o código!</summary>

@@ -79,5 +79,93 @@ Não ocorre, visto que o melhor e o pior caso não coincidem.
 
 # Quicksort Recursivo
 ```
+Função PARTICIONAR(vetor, inicio, fim)
+    pivo <- vetor[fim]
+    i <- inicio - 1
 
+    PARA j de inicio ATÉ fim - 1 FAÇA
+        SE vetor[j] <= pivo ENTÃO
+            i <- i + 1
+            Trocar vetor[i] com vetor[j]
+        FIM SE
+    FIM PARA
+
+    Trocar vetor[i + 1] com vetor[fim]
+    RETORNAR i + 1
+
+Fim PARTICIONAR
+
+Função QUICKSORT_RECURSIVO(vetor, inicio, fim)
+    SE inicio < fim ENTÃO
+        pivo <- PARTICIONAR(vetor, inicio, fim)
+
+        QUICKSORT_RECURSIVO(vetor, inicio, pivo - 1)
+
+        QUICKSORT_RECURSIVO(vetor, pivo + 1, fim)
+    FIM SE
+
+Fim QUICKSORT_RECURSIVO
 ```
+
+## Recorrências
+
+Pela análise feita sobre o algoritmo, é possível perceber certa semelhança com a sua versão iterativa, da qual, utilizando suas explicações, derivamos essas fórmulas:
+
+Melhor caso: $T(n)=T(n−1)+n$
+
+Pior caso: $T(n)=2T(\frac{n}{2})+n$
+
+## Métodos de resolução
+
+Agora para achar as notações de complexidade:
+
+### Árvore de recursão
+
+Ao analisar as chamadas do quicksort, um padrão de árvore binária em ordem simétrica se torna reconhecível:
+```
+               O
+             /   \
+            O     O
+          /  \   /  \
+         O    O  O   O
+```
+Nele, temos que cada nó é o pivô de sua chamada, posto ao centro, com valores menores à esquerda e maiores à direita. Seus filhos, por sua vez, são os pivôs das próximas chamadas nos subvetores.
+
+Portanto, cada chamada divide o tamanho do problema em dois $(n, \frac{n}{2}, \frac{n}{4}, \frac{n}{8}...\frac{n}{2^i})$
+
+O que significa que o número de nós por nível duplica $(1, 2, 4, 8 ... 2^i)$
+
+E como a recursão só termina quando o tamanho de cada subvetor for 1 (elemento):
+
+$\frac{n}{2^i}=1$
+
+$n=2^i$
+
+$\log_{2}n=\log_{2}2^i$
+
+$\log_{2}n=i$
+
+$\sum_{i=0}^{\log_{2}n} (\frac{n}{2^i}\times 2^i) = \sum_{i=0}^{\log_{2}n} (n) = n\log_{2}n $
+
+### Teorema mestre
+
+> Regras do método mestre
+> $$T(n) = aT\left( \frac{n}{b} \right) + \Theta(n^k)$$
+> 1. Se $a>b^k$, então T(n) é $\Theta(n^{\log_{b}a})$
+> 2. Se $a=b^k$, então T(n) é  $\Theta(n^k\log n)$
+> 3. Se $a<b^k$, então T(n) é $\Theta(n^k)$
+
+Como o pior caso não tem forma aplicável para o teorema mestre temos, portanto, que para o melhor caso:
+
+$$
+T(n) = 2T\left( \frac{n}{2} \right) + n 
+\\
+\\
+\begin{cases}
+  a=2 \\
+  b=2 \\
+  k=1
+\end{cases}
+$$
+
+$2=2^1$, logo T(n) é $\Theta(n\log n)$.

@@ -119,6 +119,51 @@ Pior caso: $T(n)=2T(\frac{n}{2})+n$
 
 Agora para achar as notações de complexidade:
 
+### Substituição
+
+Vamos provar que $T(n) \leq cn\log n$ para alguma constante $c>0$
+
+A recorrência: $T(n) = T(k) + T(n-k-1) + cn$
+
+Onde $k$ é o índice do pivô e $cn$ representa o trabalho para particionar o vetor.
+
+Hipótese indutiva: Assuma que $T(m) \leq cm\log m$ para todo $m < n$
+
+Substituindo na recorrência: $T(n) \leq ck\log k + c(n-k-1)\log(n-k-1) + cn$
+
+No caso padrão, $k \approx n/2$, então: 
+
+$T(n) \leq c\frac{n}{2}\log\frac{n}{2} + c\frac{n}{2}\log\frac{n}{2} + cn$
+
+$= cn\log\frac{n}{2} + cn$
+
+$= cn\log n - cn\log 2 + cn$
+
+$= cn\log n + cn(1-\log 2)$
+
+$\leq cn\log n$
+
+Isso prova a hipótese de que $T(n) \leq cn\log n$ para $c$ suficientemente grande. Logo, a complexidade é $O(n\log n)$.
+
+### Iteração
+
+Começamos com a recorrência: 
+$T(n) = 2T(n/2) + n$
+
+Iterando:
+
+Nível 0: $n$
+
+Nível 1: $2(\frac{n}{2}) = n$
+
+Nível 2: $4(\frac{n}{4}) = n$
+
+…até $\log n$ níveis
+
+Em cada nível temos $n$ operações, e existem $\log n$ níveis.
+
+Portanto: $T(n) = n \cdot \log n = O(n\log n)$
+
 ### Árvore de recursão
 
 Ao analisar as chamadas do quicksort, um padrão de árvore binária em ordem simétrica se torna reconhecível:
@@ -129,7 +174,7 @@ Ao analisar as chamadas do quicksort, um padrão de árvore binária em ordem si
           /  \   /  \
          O    O  O   O
 ```
-Nele, temos que cada nó é o pivô de sua chamada, posto ao centro, com valores menores à esquerda e maiores à direita. Seus filhos, por sua vez, são os pivôs das próximas chamadas nos subvetores.
+Nela, temos que cada nó é o pivô de sua chamada, posto ao centro, com valores menores à esquerda e maiores à direita. Seus filhos, por sua vez, são os pivôs das próximas chamadas nos subvetores.
 
 Portanto, cada chamada divide o tamanho do problema em dois $(n, \frac{n}{2}, \frac{n}{4}, \frac{n}{8}...\frac{n}{2^i})$
 
